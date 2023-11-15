@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ObjDef xmlns="http://www.sonicretro.org" Image="sprite1">
+  <Images>
+    <ImageFromSheet id="sprite1" sheet="GHZ/Objects2.gif" sourcex="52" sourcey="175" width="16" height="64">
+      <Offset X="-8" Y="-32"/>
+    </ImageFromSheet>
+     <ImageFromSheet id="sprite2" sheet="GHZ/Objects2.gif" sourcex="69" sourcey="175" width="16" height="64">
+      <Offset X="-8" Y="-32"/>
+    </ImageFromSheet>
+     <ImageFromSheet id="sprite3" sheet="GHZ/Objects2.gif" sourcex="86" sourcey="175" width="16" height="64">
+      <Offset X="-8" Y="-32"/>
+    </ImageFromSheet>
+  </Images>
+  <Subtypes>
+    <Subtype id="00" name="Shadow" image="sprite1" />
+    <Subtype id="01" name="Light" image="sprite2" />
+    <Subtype id="02" name="Dark" image="sprite3" />   
+	<Subtype id="03" name="Shadow (Not Solid)" image="sprite1" />
+    <Subtype id="04" name="Light (Not Solid)" image="sprite2" />
+    <Subtype id="05" name="Dark (Not Solid)" image="sprite3" />   
+  </Subtypes>
+</ObjDef>

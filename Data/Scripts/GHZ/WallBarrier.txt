@@ -1,0 +1,63 @@
+// ----------------------------------
+// RSDK Project: Sonic 1
+// Script Description: Wall Barrier Object
+// Script Author: Christian Whitehead/Simon Thomley
+// Unpacked by Rubberduckycooly's script unpacker
+// ----------------------------------
+
+// ========================
+// Function Declarations
+// ========================
+
+// ========================
+// Function Definitions
+// ========================
+
+// ========================
+// Events
+// ========================
+
+event ObjectUpdate
+	if object.propertyValue < 3
+		foreach (GROUP_PLAYERS, currentPlayer, ACTIVE_ENTITIES)
+			BoxCollisionTest(C_SOLID, object.entityPos, -8, -32, 8, 32, currentPlayer, C_BOX, C_BOX, C_BOX, C_BOX)
+		next
+	end if
+end event
+
+
+event ObjectDraw
+	DrawSprite(object.propertyValue)
+end event
+
+
+event ObjectStartup
+	LoadSpriteSheet("GHZ/Objects2.gif")
+	SpriteFrame(-8, -32, 16, 64, 52, 175) //0 Shadow 
+	SpriteFrame(-8, -32, 16, 64, 69, 175) //1 Light
+	SpriteFrame(-8, -32, 16, 64, 86, 175) //2 Dark
+	SpriteFrame(-8, -32, 16, 64, 52, 175) //3 Shadow (Not Solid)
+	SpriteFrame(-8, -32, 16, 64, 69, 175) //4 Light (Not Solid)
+	SpriteFrame(-8, -32, 16, 64, 86, 175) //5 Dark (Not Solid)
+
+	foreach (TypeName[Wall Barrier], arrayPos0, ALL_ENTITIES)
+		object[arrayPos0].priority = PRIORITY_ACTIVE
+	next
+end event
+
+
+// ========================
+// Editor Events
+// ========================
+
+event RSDKDraw
+	DrawSprite(0)
+end event
+
+
+event RSDKLoad
+	LoadSpriteSheet("SSZ/Objects.gif")
+	SpriteFrame(-8, -32, 16, 64, 188, 66)
+	
+	SetVariableAlias(ALIAS_VAR_PROPVAL, "unused")
+end event

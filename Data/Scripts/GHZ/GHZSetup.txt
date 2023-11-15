@@ -13,9 +13,11 @@ private alias object.frame : object.sunFlowerFrame
 private alias object.value0 : object.sunFlowerTimer
 private alias object.value1 : object.extendFlowerTimer
 private alias object.value2 : object.extendFlowerFrame
-private alias object.value3 : object.paletteTimer
-private alias object.value4 : object.waterfallLoopTimer
-private alias object.value5 : object.playingWaterfallLoop
+private alias object.value3 : object.waterfallTimer
+private alias object.value4 : object.waterfallFrame
+private alias object.value5 : object.paletteTimer
+private alias object.value6 : object.waterfallLoopTimer
+private alias object.value7 : object.playingWaterfallLoop
 
 // Tracks
 private alias 0 : TRACK_STAGE
@@ -515,6 +517,24 @@ object.extendFlowerTimer++
 		temp2 += object.extendFlowerFrame
 		temp2 += 776
 		Copy16x16Tile(436, temp2)
+	end if 
+
+object.waterfallTimer++
+	if object.waterfallTimer == 6
+		object.waterfallTimer = 0
+		object.waterfallFrame++
+		object.waterfallFrame %= 2
+
+		temp2 = object.waterfallFrame
+		temp2 += 800
+		Copy16x16Tile(425, temp2)
+		Copy16x16Tile(437, temp2)
+		
+		temp2 = 2
+		temp2 += object.waterfallFrame
+		temp2 += 800
+		Copy16x16Tile(426, temp2)
+		Copy16x16Tile(438, temp2)
 	end if 
 end event
 

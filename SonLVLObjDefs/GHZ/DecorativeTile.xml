@@ -10,6 +10,9 @@
 	<ImageFromSheet id="3" sheet="GHZ/Objects2.gif" sourcex="35" sourcey="175" width="16" height="16">
       <Offset X="-8" Y="-8"/>
     </ImageFromSheet>
+	<ImageFromSheet id="4" sheet="GHZ/Objects2.gif" sourcex="1" sourcey="192" width="16" height="16">
+	  <Offset X="-8" Y="-8"/>
+	</ImageFromSheet>
   </Images>
   <Properties>
     <Property name="End" description="Which end of the Bridge this Post is on." type="dirs" startbit="0" length="1" />
@@ -19,11 +22,13 @@
       <EnumMember name="1" />
       <EnumMember name="2" />
       <EnumMember name="3" />
+	  <EnumMember name="4" />
     </Enum>
   </Enums>
   <Subtypes>
     <Subtype id="00" name="1" image="1" />
     <Subtype id="01" name="2" image="2" />
     <Subtype id="02" name="3" image="3" />
+	<Subtype id="03" name="4" image="4" />
   </Subtypes>
 </ObjDef>
